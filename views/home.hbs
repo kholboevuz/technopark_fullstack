@@ -1,0 +1,215 @@
+<div id="loading">
+	<div class="loader">
+		<div class="load-text">
+			<div class="loaded-text"><img src="./assets/images/logo/x-icon-white.png" width="300px" alt=""></div>
+			<div class="loading-text">Sirdaryo Texnopark</div>
+		</div>
+	</div>
+	<main>
+
+	</main>
+</div>
+
+<div id="main-desktop">
+	<div id="demo" class="carousel slide" data-bs-ride="carousel">
+		<!-- Slider main container -->
+		<div class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				{{#if sliderData}}
+				<!-- Slides -->
+				{{#each sliderData}}
+				<div class="swiper-slide" style="background-image: url('/uploads/slider/{{slider_file}}');">
+
+					<div class="slide-content">
+						<div class="header-news ">
+							<span class="view"><i class="fa-regular fa-clock"></i> {{datatime}}</span>
+						</div>
+						<h3 class="card-title">{{slider_title}}</h>
+					</div>
+				</div>
+				{{/each}}
+				{{/if}}
+			</div>
+
+			<!-- If we need pagination -->
+			<div class="swiper-pagination "></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+
+			<!-- If we need scrollbar -->
+
+		</div>
+	</div>
+	<br><br><br>
+	<div class="category">
+		<div class="category-content">
+
+			<section id="team">
+				<h4 class="">Bizning yo'nalishlar</h4>
+				<br>
+				<div class="container">
+
+					<div class="row">
+						<!-- Team member -->
+						{{#if directions}}
+						{{#each directions}}
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<div class="image-flip">
+								<div class="mainflip flip-0">
+									<div class="frontside">
+										<div class="card">
+											<div class="card-body text-center">
+												<p><img class=" img-fluid" src="https://cdn-icons-png.flaticon.com/512/1579/1579568.png"
+														alt="card image"></p>
+												<h3 class="card-title pt-5">{{directions_name}}</h3>
+											</div>
+										</div>
+									</div>
+									<div class="backside">
+										<div class="card">
+											<div class="card-body text-center mt-4">
+												<h4 class="card-title">{{directions_name}}</h4>
+												<p class="card-text">Oliy ta'lim, fan va innovatsiyalar vazirligi Innovatsion rivojlanish
+													agentligi huzuridagi Sirdaryo viloyati Yoshlar Texnoparkining “InnoX” 1-2-3 dasturlari
+													faoliyati bo‘yicha
+												</p>
+												<a href="/direct?title={{directions_name}}"><button
+														class="btn btn-success">Batafsil</button></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+						{{/if}}
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class="news" id="home-news">
+		<div class="news-container">
+			<div class="container mt-2 pr-6 ">
+				<div class="news-link d-flex">
+					<h4>Yangiliklar</h4>
+					<a href="">Barchasi <i class="fa-solid fa-angle-right"></i></a>
+				</div>
+				<div class="row">
+					{{#each newsdata}}
+					<div class="col-md-3 col-sm-6 pt-3">
+						<div class="card card-block p-3">
+							<a href="/news?id={{_id}}" class="text-decoration-none">
+								<h4 class="card-title text-right"><i class="material-icons">#texnopark</i></h4>
+								<img src="./uploads/news/{{news_file}}" alt="Photo of sunset">
+
+								<div class="header-news mt-3">
+									<span class="view"><i class="fa-solid fa-eye"></i> 2</span>
+									<span class="view"><i class="fa-regular fa-clock"></i> {{datatime}}</span>
+								</div>
+
+								<h5 class="mt-3 mb-3" style="color: #232E3C;"><strong>{{news_title}}</strong></h5>
+
+							</a>
+						</div>
+					</div>
+					{{/each}}
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div class="news-facebook">
+
+		<div class="iframe-instagram" style="overflow: auto; max-height: 500px;">
+			<iframe src="https://www.instagram.com/sirdaryo_texnopark/embed" width="400px" height="700" frameborder="0"
+				scrolling="no" allowtransparency="true"></iframe>
+		</div>
+		<div class="iframe-telegram" style="overflow: auto; max-height: 500px;">
+			<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="sirdaryotexnopark/1631"
+				data-width="100%"></script>
+		</div>
+		<div class="iframe">
+			<iframe
+				src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSirdaryotexnopark&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId"
+				width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+				allowfullscreen="true"
+				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+		</div>
+
+	</div>
+	<br><br>
+	<div class="director ">
+		<div class="director-content">
+			<div class="names">
+				<h1 class="text-white">Qo'shiyev Bahodir Habibjon o'g'li</h1>
+				<p class="names">Sirdaryo Yoshlar Texnoparki Direktori</p>
+				<p class="social">Ijtimoiy tarmoqlar:</p>
+			</div>
+			<div class="images">
+				<img src="./assets/images/director.png" alt="" width="250">
+			</div>
+		</div>
+	</div>
+
+	{{!-- <div class="mediatika">
+		<h4>Mediatika</h4>
+		<br>
+		<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+			<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+			<label class="btn btn-outline-primary" for="btnradio1">Fotogaleriya</label>
+
+			<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+			<label class="btn btn-outline-primary" for="btnradio2">Videogaleriya</label>
+
+		</div>
+		<br><br>
+		<div class="container mt-2">
+			<div class="photo-galary">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="card card-block p-3">
+							<img src="https://sirdaryotexnopark.uz/wp-content/uploads/2023/12/photo_2023-12-22_10-33-16-300x200.jpg"
+								alt="Photo of sunset">
+							<h5 class="mt-3 mb-3"><strong>Photo</strong></h5>
+							<a href="`">Yuklab oliash</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="video-galary" style="display: none;">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="card card-block p-3">
+							<img src="https://sirdaryotexnopark.uz/wp-content/uploads/2023/12/photo_2023-12-22_10-33-16-300x200.jpg"
+								alt="Photo of sunset">
+							<h5 class="mt-3 mb-3"><strong>video</strong></h5>
+							<a href="`">Yuklab oliash</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div> --}}
+	<div class="partners">
+		<section>
+			<div class="slider">
+				<div class="slider-items">
+					<img src="https://innovation.gov.uz/_nuxt/img/logo.d9407d1.svg" alt="">
+					<img src="https://edu.uz/media/735ed3c1-5e11-fd10-107a-824bfdef9db1.png" alt="">
+					<img src="https://www.iasp.ws/media/imagegenerator/136x0/IASP-logo.png" alt="">
+				</div>
+			</div>
+
+		</section>
+	</div>
+</div>

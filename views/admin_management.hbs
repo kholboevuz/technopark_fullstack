@@ -1,0 +1,50 @@
+<main class="content">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<div class=" d-flex">
+				<div class="card flex-fill">
+					<div class="card-header d-flex" style="justify-content: space-between;">
+						<h5 class="card-title mb-0">Rahbariyat ro'yxati</h5>
+						<a href="/admin/admin-add-management"> <button class="btn btn-info">Ma'lumot qo'shish
+								+</button></a>
+					</div>
+					{{#if managementData}}
+					<table class="table table-hover my-0">
+						<thead>
+							<tr>
+								<th class="d-none d-xl-table-cell">To'liq ism</th>
+								<th class="d-none d-xl-table-cell">Lavozim</th>
+								<th class="d-none d-md-table-cell">Surati</th>
+								<th class="d-none d-md-table-cell">Sana</th>
+								<th class="d-none d-md-table-cell">Xarakat</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each managementData}}
+							<tr>
+								<td class="d-none d-xl-table-cell">{{userfullname}}</td>
+								<td class="d-none d-xl-table-cell">{{userposition}}</td>
+								<td class="d-none d-xl-table-cell"><a href="/uploads/management/{{user_file}}">Yuklab olish</a></td>
+								<td class="d-none d-xl-table-cell">{{datatime}}</td>
+								<td class="d-none d-md-table-cell">
+									<form action="/admin/delete" method="get">
+										<input type="hidden" name="method" value="Management">
+										<input type="hidden" name="url" value="admin-management">
+										<input type="hidden" name="_id" value="{{_id}}">
+										<button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+									</form>
+								</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+					{{else}}
+					<h3 class="text-center text-danger p-5">Ma'lumotlar mavjud emas</h3>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	</body>
+</main>

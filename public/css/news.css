@@ -1,0 +1,68 @@
+.news-card {
+	width: 80%;
+	margin: auto;
+	padding: 100px;
+}
+.news-content {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.news-title {
+	padding: 20px;
+}
+.news-title h3 {
+	font-weight: 700;
+}
+
+.news-description {
+	padding: 20px 50px;
+}
+.news-description p {
+	font-size: 18px;
+	text-align: justify;
+	color: rgb(75, 75, 75);
+}
+.news-footer {
+	padding: 20px;
+}
+.news-footer .social {
+	display: flex;
+	align-items: center;
+}
+.news-footer .social p {
+	padding-top: 15px;
+	font-size: 18px;
+}
+.news-footer .social i {
+	font-size: 40px;
+	padding-left: 10px;
+	color: #03276a;
+}
+
+.news-footer .social .fa-telegram:hover {
+	cursor: pointer;
+	color: #3aa9ea;
+}
+
+.news-footer .social .fa-instagram:hover {
+	cursor: pointer;
+	color: #d93f78;
+}
+.news-footer .social .fa-facebook:hover {
+	cursor: pointer;
+	color: #2c68ff;
+}
+
+.news-info {
+	justify-content: space-between;
+	color: #1a3d8e;
+	padding-left: 20px;
+	font-size: 20px;
+}
+.news-info .view {
+	padding-left: 15px;
+}
+.news-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

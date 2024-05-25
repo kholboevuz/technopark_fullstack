@@ -1,0 +1,58 @@
+<main class="content">
+	<div class="container-fluid p-0">
+
+		<div class="row">
+			<div class=" d-flex">
+				<div class="card flex-fill">
+
+					<div class="card-header d-flex" style="justify-content: space-between;">
+						<h5 class="card-title mb-0">Yo'nalishlar</h5>
+						<a href="/admin/admin-add-directions"><button class="btn btn-info" data-bs-toggle="modal"
+								data-bs-target="#exampleModal">Yo'nalish qo'shish
+								+</button></a>
+
+					</div>
+					{{#if directionsData}}
+					<table class="table table-hover my-0">
+						<thead>
+							<tr>
+								<th>Yo'nalish nomi </th>
+								<th class="d-none d-xl-table-cell">Yo'nalish haqida</th>
+								<th class="d-none d-xl-table-cell">Ko'rish</th>
+								<th class="d-none d-md-table-cell">Sana</th>
+								<th class="d-none d-md-table-cell">Xarakat</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each directionsData}}
+							<tr>
+								<td class="d-none d-xl-table-cell">{{directions_name}} </td>
+								<td class="d-none d-xl-table-cell">{{{directions_data}}}</td>
+								<td class="d-none d-xl-table-cell"><a href="/direct?title={{directions_name}}">Sahifaga o'tish</a></td>
+								<td class="d-none d-xl-table-cell">{{datatime}}</td>
+								<td class="d-none d-md-table-cell">
+									<form action="/admin/delete" method="get">
+										<input type="hidden" name="method" value="Directions">
+										<input type="hidden" name="url" value="admin-directions">
+										<input type="hidden" name="_id" value="{{_id}}">
+										<button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+									</form>
+								</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+					{{else}}
+					<h3 class="text-center text-danger p-5">Yo'nalishlar mavjud emas</h3>
+					{{/if}}
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	</body>
+</main>

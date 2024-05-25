@@ -1,0 +1,119 @@
+<style>
+	/* Customize the Google Translate dropdown */
+	.goog-te-combo {
+		display: inline-block;
+		padding: 0.375rem 0.75rem;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #495057;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #ced4da;
+		border-radius: 0.25rem;
+		transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+
+	/* Adjusting the arrow icon */
+	.goog-te-gadget-icon {
+		display: none;
+		/* Hide the default Google Translate icon */
+	}
+
+	/* Optionally, adjust the language dropdown width */
+	.goog-te-combo {
+		width: 200px;
+		/* Set width as desired */
+	}
+</style>
+<div class="desktop">
+	<div class="header">
+		<div class="header-content">
+			<div class="rows d-flex">
+				<p class="time" id="time-date">
+				</p>
+				<p class="test text-danger">
+					<i class="fa fa-warning"></i> Sayt test rejimida ishlamoqda
+				</p>
+				<a href="https://sirdaryotexnopark.uz/" target="_blank" class="text-decoration-none text-info">
+					<i class="fa fa-link"></i> Saytning eski talqini</a>
+
+				<p class="social">
+					Biz ijtimoiy tarmoqlarda:
+					<i class="fa-brands fa-telegram"></i>
+					<i class="fa-brands fa-instagram"></i>
+					<i class="fa-brands fa-youtube"></i>
+					<i class="fa-brands fa-facebook"></i>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="header-brand">
+		<div class="content d-flex">
+			<div class="logo">
+				<a href="/"><img src="./assets/images/logo/logo.png" alt="" width="300"></a>
+
+			</div>
+			<div class="brand-menu d-flex pt-1">
+				<div class="writer utils">
+					<div class="pt-3">
+						<a href="#" class="text-decoration-none">
+							<p class="writer-content"><i class="fa-regular fa-pen-to-square"></i> Qabulga yozilish</p>
+						</a>
+					</div>
+				</div>
+				<div class="writer utils">
+					<div class="pt-3">
+						<a href="#" class="text-decoration-none">
+							<p class="writer-content"><i class="fa-solid fa-vr-cardboard"></i> 360° VR sayohat
+							</p>
+						</a>
+					</div>
+				</div>
+
+				<div class="langue utils">
+					<div class="dropdown">
+
+						<div id="google_translate_element"></div>
+
+					</div>
+
+				</div>
+
+				<div class="button utils">
+					<div class="btn-content"> <button data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
+								class="fa-solid fa-right-to-bracket"></i> Kirish</button></div>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</div>
+
+	<marquee behavior="scroll">
+		{{#each sliderData}}
+		{{slider_title}} *
+		{{/each}}
+	</marquee>
+	<hr>
+</div>
+
+<div class="mobile">
+	<header>
+		<div class="data">
+			<p class="warning"><i class="fa fa-warning"></i> Sayt test rejimida ishlamoqda</p>
+			<p class="text-info"><i class="fa fa-link"></i> Saytning eski talqini</p>
+		</div>
+	</header>
+	<div class="mobile-header-logo">
+		<img src="./assets/images/logo/logo.png" alt="">
+	</div>
+</div>
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element')
+	}
+</script>
+<script type="text/javascript"
+	src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

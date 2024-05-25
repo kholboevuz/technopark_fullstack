@@ -1,0 +1,61 @@
+<div id="snackbar">Jarayon muvaffaqiyat bajarildi <i class="fa fa-check"></i></div>
+<footer class="footer">
+	<div class="container-fluid">
+		<div class="row text-muted">
+			<div class="col-6 text-start">
+				<p class="mb-0">
+					<a class="text-muted text-decoration-none"><strong>Barcha huquqlar
+							himoyalangan</strong></a> &copy;
+				</p>
+			</div>
+			<div class="col-6 text-end">
+				<p class="mb-0">
+					<a class="text-muted text-decoration-none"><strong>Ishlab chiquvchi: Sevinchbek Kholboyev</strong></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	function myFunction() {
+
+		var x = document.getElementById("snackbar")
+
+
+		x.className = "show"
+
+
+		setTimeout(function () { x.className = x.className.replace("show", "") }, 3000)
+	}
+	const urlParams = new URLSearchParams(window.location.search)
+	if (urlParams.has('success') && urlParams.get('success') === 'true') {
+		myFunction()
+	}
+</script>
+<script>
+	function countdown() {
+		var seconds = 300
+		var countdownElement = document.getElementById('countdown')
+
+		var timer = setInterval(function () {
+			seconds--
+
+			if (seconds >= 0) {
+				var minutes = Math.floor(seconds / 60)
+				var remainingSeconds = seconds % 60
+				countdownElement.innerHTML = '<i class="fa-solid fa-clock"></i> ' + 'Avto chiqish: ' + minutes + ' daqiqa ' + remainingSeconds + ' soniya'
+			} else {
+				clearInterval(timer)
+				countdownElement.innerHTML = "<span class='text-danger'>Vaqt tugadi</span>"
+				setTimeout(function () {
+					window.location.href = '/admin/logout'
+				}, 1000)
+			}
+		}, 1000)
+	}
+
+	countdown()
+</script>
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="/js/texteditor.js"></script>

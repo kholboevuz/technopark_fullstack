@@ -1,0 +1,66 @@
+<main class="content">
+	<div class="container-fluid p-0">
+
+		<div class="row">
+			<div class=" d-flex">
+				<div class="card flex-fill">
+
+					<div class="card-header d-flex" style="justify-content: space-between;">
+						<h5 class="card-title mb-0">Adminlar ro'yxati</h5>
+						<a href="/admin/admin-add"> <button class="btn btn-info" data-bs-toggle="modal"
+								data-bs-target="#exampleModal">Ro'yxatdan
+								o'tkazish</button></a>
+
+					</div>
+					<table class="table table-hover my-0">
+						<thead>
+							<tr>
+								<th>Ism familiya</th>
+								<th class="d-none d-xl-table-cell">Telefon raqam</th>
+								<th class="d-none d-xl-table-cell">Lavozim </th>
+								<th>Holati</th>
+								<th class="d-none d-md-table-cell">Key</th>
+								<th class="d-none d-md-table-cell">Xarakat</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#if adminData}}
+							{{#each adminData}}
+							<tr>
+								<td>{{fullname}}</td>
+								<td class="d-none d-xl-table-cell">{{phonenumber}}</td>
+								<td class="d-none d-xl-table-cell">{{position}}</td>
+
+								<td class="d-none d-xl-table-cell"><span class="badge bg-success">Faol</span></td>
+								<!-- Add unique id for each status -->
+
+
+								<td class="d-none d-md-table-cell">{{password}}</td>
+								<td class="d-none d-md-table-cell">
+									<form action="/admin/delete" method="get">
+										<input type="hidden" name="method" value="Admin">
+										<input type="hidden" name="url" value="admin-admins">
+										<input type="hidden" name="_id" value="{{_id}}">
+										<button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+									</form>
+								</td>
+							</tr>
+							{{/each}}
+							{{else}}
+							<tr>
+								<td class="text-center">Adminlar mavjud emas</td>
+							</tr>
+							{{/if}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	</body>
+</main>

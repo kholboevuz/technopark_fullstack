@@ -1,0 +1,86 @@
+<style>
+	iframe {
+		width: 100%;
+		height: 800px;
+	}
+
+	.slider-card .table {
+		overflow-y: scroll;
+		max-height: 800px;
+	}
+</style>
+<main class="content">
+	<div class="container-fluid p-0">
+		<div class="mb-3">
+			<h1 class="h3 d-inline align-middle">Xalqaro yangilik qo'shish</h1>
+		</div>
+		<div class="row">
+			<div class="slider">
+				<div class="card card-card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Yangilik ma'lumotlarini kiriting</h5>
+					</div>
+					<form action="/admin-international?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+						<div class="card-body">
+							<label for="label" class="form-label">Yangilik mavzusi:</label>
+							<input type="text" name="news_title" class="form-control" placeholder="Mavzu">
+							<label for="label" class="form-label pt-3">Yangilik surati:</label>
+							<input type="file" name="news_file" class="form-control" placeholder="Lavozim" accept=".jpg, .jpeg, .png">
+							<label for="label" class="form-label pt-3">Yangilik ma'lumotalari:</label>
+							<textarea name="news_data" id="default"></textarea>
+							<br>
+							<button type="submit" class="btn btn-primary ">Qo'shish</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="card slider-card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Mavjud yangiliklar</h5>
+					</div>
+					{{#if internationalData}}
+					<div class="table">
+						<table class="table table-hover my-0">
+							<thead>
+								<tr>
+									<th>Mavzu</th>
+									<th class="d-none d-xl-table-cell">Ma'lumot</th>
+									<th class="d-none d-xl-table-cell">Sana </th>
+
+									<th class="d-none d-md-table-cell">Xarakat</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each internationalData}}
+								<tr>
+									<td class="d-none d-xl-table-cell">{{news_title}}</td>
+									<td class="d-none d-xl-table-cell">{{{news_data}}}</td>
+									<td class="d-none d-xl-table-cell">{{datatime}}</td>
+									<td class="d-none d-md-table-cell">
+										<form action="/admin/delete" method="get">
+											<input type="hidden" name="method" value="International">
+											<input type="hidden" name="url" value="admin-international">
+											<input type="hidden" name="_id" value="{{_id}}">
+											<button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+										</form>
+									</td>
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
+					{{else}}
+					<h3 class="text-center text-danger p-5">Yangiliklar mavjud emas</h3>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="mb-3">
+			<h1 class="h3 d-inline align-middle">Ayni vaqtdagi holat:</h1>
+		</div>
+		<iframe src="http://94.241.168.135:8050/international-cooperation" title="Sirdaryo yoshlar texnoparki"></iframe>
+
+
+	</div>
+</main>

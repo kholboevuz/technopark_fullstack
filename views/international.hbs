@@ -1,0 +1,38 @@
+<div class="news">
+	<div class="news-container">
+		<div class="container mt-2 pr-6 ">
+			<div class="news-link d-flex">
+				<h4>Xalqaro aloqalar</h4>
+
+			</div>
+			<div class="row">
+				{{#if internationalData}}
+				{{#each internationalData}}
+				<div class="col-md-3 col-sm-6 pt-3">
+					<a href="/international-post?_id={{_id}}" class="text-decoration-none">
+						<div class="card card-block p-3">
+
+							<h4 class="card-title text-right"><i class="material-icons"> #international</i></h4>
+							<img src="./uploads/international/{{news_file}}" alt="Photo of sunset">
+
+							<div class="header-news mt-3">
+								<span class="view"><i class="fa-solid fa-eye"></i> 2</span>
+								<span class="view"><i class="fa-regular fa-clock"></i> {{datatime}}</span>
+							</div>
+							<h5 class="mt-3 mb-3"><strong>{{news_title}}</strong></h5>
+
+						</div>
+					</a>
+				</div>
+				{{/each}}
+				{{else}}
+				<h1 class="text-danger text-center">Yangiliklar mavjud emas</h1>
+
+				{{/if}}
+
+			</div>
+
+
+		</div>
+	</div>
+</div>

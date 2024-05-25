@@ -1,0 +1,31 @@
+<main class="content">
+	<div class="container-fluid p-0">
+		<div class="mb-3">
+			<h1 class="h3 d-inline align-middle">Tanlov qo'shish</h1>
+		</div>
+		<div class="row">
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Tanlov ma'lumotari</h5>
+					</div>
+					<form action="/admin-choices?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+						<div class="card-body">
+							<label for="label" class="form-label">Tanlov nomini kiriting:</label>
+							<input type="text" name="choices_title" class="form-control" placeholder="Tanlov nomi">
+							<label for="label" class="form-label pt-3">Tanlov haqida ma'lumot kiriting:</label>
+							<textarea name="choices_data" id="default"></textarea>
+							<label for="label" class="form-label pt-3">Tanlov surati yuklang:</label>
+							<input type="file" name="choices_file" class="form-control" accept=".jpg, jpeg, .png">
+							<label for="label" class="form-label pt-3">Boshlanish sanasini kiriting:</label>
+							<input type="date" name="choices_starttime" class="form-control">
+							<label for="label" class="form-label pt-3">Tugash sanasini kiriting:</label>
+							<input type="date" name="choices_endtime" class="form-control" placeholder="Parol">
+							<br>
+							<button type="submit" class="btn btn-primary ">Qo'shish</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+</main>

@@ -1,0 +1,28 @@
+<main class="content">
+	<div class="container-fluid p-0">
+
+		<div class="mb-3">
+			<h1 class="h3 d-inline align-middle">Yo'nlishlash hodimi qo'shish</h1>
+		</div>
+		<div class="row">
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Yo'nlishlash ma'lumotari</h5>
+					</div>
+					<form action="/admin-directions?_csrf={{csrfToken}}" method="post">
+						<div class="card-body">
+							<label for="label" class="form-label">Yo'nalish nomi: </label>
+							<input type="text" name="directions_title" class="form-control" placeholder="Yo'nalish nomi">
+							<br>
+							<label for="label" class="form-label">Yo'nalish haqida ma'lumot: </label>
+							<textarea name="directions_data" id="default"></textarea>
+							<br>
+							<button type="submit" class="btn btn-primary ">Qo'shish</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+</main>

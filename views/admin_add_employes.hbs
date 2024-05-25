@@ -1,0 +1,29 @@
+<main class="content">
+	<div class="container-fluid p-0">
+
+		<div class="mb-3">
+			<h1 class="h3 d-inline align-middle">Tashklot hodim qo'shish</h1>
+		</div>
+		<div class="row">
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Hodim ma'lumotari</h5>
+					</div>
+					<form action="/admin-employes?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+						<div class="card-body">
+							<label for="label" class="form-label">To'liq ismg:</label>
+							<input type="text" name="userfullname" class="form-control" placeholder="Ism">
+							<label for="label" class="form-label pt-3">Lavozimini kiriting:</label>
+							<input type="text" name="userposition" class="form-control" placeholder="Lavozim">
+							<label for="label" class="form-label pt-3">Suratini yuklang:</label>
+							<input type="file" name="user_file" class="form-control" accept=".jpeg, .jpg, .png">
+							<br>
+							<button type="submit" class="btn btn-primary ">Qo'shish</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+</main>

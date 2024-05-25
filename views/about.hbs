@@ -1,0 +1,209 @@
+<style>
+	#rahbariyat,
+	#hodimlar,
+	#majburiyat,
+	#lexuz {
+		display: none;
+	}
+</style>
+<div class="about-page">
+	<div class="about">
+		<div class="about-info">
+
+			<div class="text" id="text-info">
+				<div class="print" id="content">
+					<p>{{{aboutData.company_data}}}</p>
+				</div>
+
+				<div class="news-footer">
+					<div class="social">
+						<p>Biz ijtimoiy tarmoqlarda: </p>
+						<div class="icon">
+							<a href="https://t.me/sirdaryotexnopark"><i class="fa-brands fa-telegram"></i></a>
+							<a href="https://www.instagram.com/sirdaryo_texnopark/"><i class="fa-brands fa-instagram"></i></a>
+							<a href="https://www.facebook.com/Sirdaryotexnopark"><i class="fa-brands fa-facebook"></i></a>
+						</div>
+
+					</div>
+					<div class="print">
+						<button class="btn btn-secondary" onclick="printDiv()"><i class="fa fa-print"></i> Chop etish</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="rahbariyat" id="rahbariyat">
+				<div class="rahbariyat-row">
+					<div class="title">
+						<h3>Texnopark rahbariyati</h3>
+					</div>
+					{{#each managemntData}}
+					<div class="cards pt-5">
+						<div class="rahbariyat-card">
+							<div class="images">
+								<img src="/uploads/management/{{user_file}}" alt="">
+							</div>
+							<div class="user-data">
+								<h2 style="padding-bottom: 3px;"> {{userfullname}} </h2>
+								<p>{{userposition}}</p>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="rahbariyat" id="hodimlar">
+				<div class="rahbariyat-row">
+					<div class="title">
+						<h3>Texnopark hodimlari</h3>
+					</div>
+					{{#each employeData}}
+					<div class="cards pt-5">
+						<div class="rahbariyat-card">
+							<div class="images">
+								<img src="/uploads/employes/{{user_file}}" alt="">
+							</div>
+							<div class="user-data">
+								<h3 style="padding-bottom: 3px;"> {{userfullname}} </h3>
+								<br>
+								<p>{{userposition}}</p>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="text" id="majburiyat">
+				<div class="print" id="content">
+					<p>{{{aboutData.company_commitment}}}</p>
+				</div>
+
+				<div class="news-footer">
+					<div class="social">
+						<p>Biz ijtimoiy tarmoqlarda: </p>
+						<div class="icon">
+							<i class="fa-brands fa-telegram"></i>
+							<i class="fa-brands fa-instagram"></i>
+							<i class="fa-brands fa-facebook"></i>
+						</div>
+
+					</div>
+					<div class="print">
+						<button class="btn btn-secondary" onclick="printDiv()"><i class="fa fa-print"></i> Chop etish</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="text" id="lexuz">
+				<div class="print" id="content">
+
+					<p>
+						<iframe src="https://lex.uz/docs/-4823544?ONDATE=01.01.2023%2001" title="description"></iframe>
+					</p>
+				</div>
+
+				<div class="news-footer">
+					<div class="social">
+						<p>Biz ijtimoiy tarmoqlarda: </p>
+						<div class="icon">
+							<i class="fa-brands fa-telegram"></i>
+							<i class="fa-brands fa-instagram"></i>
+							<i class="fa-brands fa-facebook"></i>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="about-card">
+			<ul>
+				<li onclick="texnoparkInfo()"><i class="fa fa-circle-info "></i> Texnopark haqida</li>
+				<li onclick="rahbariyatInfo()"><i class="fa fa-user"></i> Texnopark rahbariyati</li>
+				<li onclick="hodimlarInfo()"><i class="fa fa-users"></i> Texnopark hodimlari</li>
+				<li onclick="majburiyatInfo()"><i class="fa fa-warning"></i> Texnopark majburiyatlari</li>
+				<li onclick="lexuzInfo()"><i class="fa fa-link"></i> Texnopark lex.uz</li>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+<div class="foote-image">
+
+	<img src="assets/images/bg404.8f47d70.png" alt="">
+</div>
+
+<script>
+
+	const textInfo = document.getElementById('text-info')
+	const rahbariyat = document.getElementById('rahbariyat')
+	const hodimlar = document.getElementById('hodimlar')
+	const majburiyat = document.getElementById('majburiyat')
+	const lexuz = document.getElementById('lexuz')
+
+	function texnoparkInfo() {
+		textInfo.style.display = 'block'
+		rahbariyat.style.display = 'none'
+		hodimlar.style.display = 'none'
+		majburiyat.style.display = 'none'
+		lexuz.style.display = 'none'
+	}
+
+	function rahbariyatInfo() {
+		textInfo.style.display = 'none'
+		rahbariyat.style.display = 'block'
+		hodimlar.style.display = 'none'
+		majburiyat.style.display = 'none'
+		lexuz.style.display = 'none'
+	}
+
+
+	function hodimlarInfo() {
+		textInfo.style.display = 'none'
+		rahbariyat.style.display = 'none'
+		hodimlar.style.display = 'block'
+		majburiyat.style.display = 'none'
+		lexuz.style.display = 'none'
+	}
+
+
+	function majburiyatInfo() {
+		textInfo.style.display = 'none'
+		rahbariyat.style.display = 'none'
+		hodimlar.style.display = 'none'
+		majburiyat.style.display = 'block'
+		lexuz.style.display = 'none'
+	}
+
+
+	function lexuzInfo() {
+		textInfo.style.display = 'none'
+		rahbariyat.style.display = 'none'
+		hodimlar.style.display = 'none'
+		majburiyat.style.display = 'none'
+		lexuz.style.display = 'block'
+	}
+
+
+
+</script>
+
+
+
+<script>
+
+	function printDiv() {
+		var content = document.getElementById("content").innerHTML
+		var printWindow = window.open('', '_blank')
+		printWindow.document.open()
+		printWindow.document.write('<html><head><title>Sirdaryo yoshlar texnoparki direktori</title></head><body>')
+		printWindow.document.write(content)
+		printWindow.document.write('</body></html>')
+		printWindow.document.close()
+		printWindow.print()
+	}
+</script>

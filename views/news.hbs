@@ -1,0 +1,70 @@
+<div class="news-mobile ">
+	<div class="news-card" id="content">
+		<div class="news-content">
+			<div class="news-title">
+				<h3>{{newsData.news_title}}</h3>
+			</div>
+			<div class="news-info">
+				<span class="view"><i class="fa-solid fa-eye"></i> 130</span>
+				<span class="view"><i class="fa-regular fa-clock"></i> {{newsData.datatime}}</span>
+			</div>
+			<div class="news-images">
+
+				<div id="demo" class="carousel slide" data-bs-ride="carousel">
+					<!-- Slider main container -->
+					<div class="swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide" style="background-image: url('/uploads/news/{{newsData.news_file}}');">
+
+							</div>
+
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+
+			<div class="news-description">
+				<p>{{{newsData.news_data}}}</p>
+			</div>
+
+			<div class="news-footer">
+				<div class="social">
+					<p>Biz ijtimoiy tarmoqlarda: </p>
+					<div class="icon">
+						<a href="https://t.me/sirdaryotexnopark"><i class="fa-brands fa-telegram"></i></a>
+						<a href="https://www.instagram.com/sirdaryo_texnopark/"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://www.facebook.com/Sirdaryotexnopark"><i class="fa-brands fa-facebook"></i></a>
+					</div>
+
+				</div>
+				<div class="print">
+					<button class="btn btn-secondary" onclick="printDiv()"><i class="fa fa-print"></i> Chop etish</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="foote-image">
+		<img src="assets/images/bg404.8f47d70.png" alt="">
+	</div>
+
+</div>
+
+<script>
+
+	function printDiv() {
+		var content = document.getElementById("content").innerHTML
+		var printWindow = window.open('', '_blank')
+		printWindow.document.open()
+		printWindow.document.write('<html><head><title>Sirdaryo yoshlar texnoparki direktori</title></head><body>')
+		printWindow.document.write(content)
+		printWindow.document.write('</body></html>')
+		printWindow.document.close()
+		printWindow.print()
+	}
+</script>

@@ -1,0 +1,62 @@
+<main class="content">
+	<div class="container-fluid p-0">
+
+		<div class="row">
+			<div class=" d-flex">
+				<div class="card flex-fill">
+
+					<div class="card-header d-flex" style="justify-content: space-between;">
+						<h5 class="card-title mb-0">Tanlovlar ro'yxati</h5>
+						<a href="/admin/admin-add-choices"><button class="btn btn-info" data-bs-toggle="modal"
+								data-bs-target="#exampleModal">Tanlov qo'shish
+								+</button></a>
+
+					</div>
+					{{#if choicesData}}
+					<table class="table table-hover my-0">
+						<thead>
+							<tr>
+								<th>Tanlov nomi</th>
+								<th class="d-none d-xl-table-cell">Tanlov haqida</th>
+								<th class="d-none d-xl-table-cell">Tanlov surati</th>
+								<th class="d-none d-md-table-cell">Boshlanish sanasi</th>
+								<th class="d-none d-md-table-cell">Tugash sanasi sanasi</th>
+								<th class="d-none d-md-table-cell">Xarakat</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each choicesData}}
+							<tr>
+								<td class="d-none d-xl-table-cell">{{choices_name}}</td>
+								<td class="d-none d-xl-table-cell">{{{choices_data}}}</td>
+								<td class="d-none d-xl-table-cell"><a href="/uploads/choices/{{choices_file}}">Yuklab olish</a></td>
+								<td class="d-none d-xl-table-cell">{{choices_starttime}}</td>
+								<td class="d-none d-xl-table-cell">{{choices_endtime}}</td>
+								<td class="d-none d-md-table-cell">
+									<form action="/admin/delete" method="get">
+										<input type="hidden" name="method" value="Choices">
+										<input type="hidden" name="url" value="admin-choices">
+										<input type="hidden" name="_id" value="{{_id}}">
+										<button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+									</form>
+								</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+					{{else}}
+					<h3 class="text-center text-danger p-5">Tanlovlar mavjud emas</h3>
+					{{/if}}
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	</body>
+</main>

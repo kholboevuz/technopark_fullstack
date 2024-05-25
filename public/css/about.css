@@ -1,0 +1,98 @@
+.about-page {
+	width: 90%;
+	margin: auto;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.about-page .about {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+}
+.about-page .about .about-info {
+	text-align: justify;
+	width: 70%;
+	padding: 30px 5px;
+}
+
+.about-page .about .about-info .text {
+	font-size: 18px;
+	color: rgb(51, 51, 51);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.about-page .about .about-card {
+	padding: 120px 5px;
+}
+.about-page .about .about-card ul {
+	background-color: #f3f7ff;
+	display: block;
+	padding: 50px;
+	border-radius: 10px;
+}
+.about-page .about .about-card ul {
+	list-style: none;
+	font-size: 20px;
+}
+.about-page .about .about-card ul li {
+	padding-top: 20px;
+	color: #0740b1;
+	font-weight: 700;
+	display: block;
+	transition: transform 0.2s;
+}
+
+.about-page .about .about-card ul li:hover {
+	cursor: pointer;
+	color: #002163;
+	transform: scale(1.2);
+}
+
+.about-page .about .active {
+	cursor: pointer;
+	color: #002163;
+	transform: scale(1.2);
+}
+
+.foote-image img {
+	width: 100%;
+}
+
+.about-page .rahbariyat-card {
+	display: flex;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+		rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+	padding: 20px;
+	width: 70%;
+	transition: transform 0.2s;
+}
+.about-page .rahbariyat-card img {
+	width: 150px;
+}
+.about-page .rahbariyat-card .user-data {
+	padding-left: 20px;
+}
+.about-page .rahbariyat-card:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.about-page .rahbariyat-card .user-data h3 {
+	font-weight: 700;
+	color: #002163;
+}
+.about-page .rahbariyat-card .user-data p {
+	font-size: 18px;
+}
+
+.about-page iframe {
+	height: 1000px;
+	width: 100%;
+}

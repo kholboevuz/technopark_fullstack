@@ -1,0 +1,36 @@
+@media only screen and (max-width: 1200px) {
+	.desktop,
+	.director {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+
+	.mobile header {
+		width: 100%;
+		margin: auto;
+		background-color: #003087;
+		text-align: center;
+	}
+	.mobile header .data .warning {
+		color: #cb6678;
+	}
+	.mobile header .data {
+		padding: 10px;
+		font-size: 20px;
+		font-weight: 600;
+	}
+	.mobile-header-logo img {
+		width: 100%;
+		margin: auto;
+	}
+	.slide-content {
+		bottom: 20px; /* Adjust as needed */
+		left: 20px; /* Adjust as needed */
+		padding: 10px;
+	}
+	.swiper-slide {
+		box-shadow: none;
+	}
+}

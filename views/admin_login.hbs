@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+	#sidebar,
+	#navbar,
+	.footer {
+		display: none;
+	}
+</style>
+{{#if error}}
+<script>
+	alert("Kalit xato tekshirib qayta kiriting, 5 urinishdan so'ng bloklanasiz")
+</script>
+{{/if}}
+<main class="d-flex w-100">
+	<div class="container d-flex flex-column">
+		<div class="row vh-100">
+			<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+				<div class="d-table-cell align-middle">
+
+					<div class="text-center mt-4">
+						<h1 class="h2">Sirdaryo Yoshlar Texnoparki CMS paneliga kirish</h1>
+						<p class="lead">
+							© 2024. Barcha huquqlar himoyalangan.
+						</p>
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<div class="m-sm-4">
+								<div class="text-center">
+									<img src="../assets/images/logo/logo.png" alt="Yoshalar texnoparki" class="pb-5" width="300" />
+								</div>
+								<form action="/admin-login?_csrf={{csrfToken}}" method="post">
+									<div class="mb-3">
+										<input type="hidden" name="_csrf" value="{{csrfToken}}">
+										<label class="form-label">Admin uchun berilgan maxsus kalitni yuklang <span
+												class="text-danger">(E-IMZO dasturi yoniq bo'lishi kerak )</span>:</label>
+										<input class="form-control form-control-lg" id="fileInput" type="file" name="file"
+											placeholder="kalit yuklash" accept=".json" required />
+									</div>
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Kalit parolini kiriting</h5>
+
+
+
+												</div>
+												<div class="modal-body">
+													<label for="form-label">Qolgan vaqt: <span id="countdownss">60 soniya</span></label>
+													<input type="text" name="password" placeholder="Parolni kiriting" class="form-control">
+													<input type="hidden" name="token" id="tokenInput">
+												</div>
+												<div class="modal-footer">
+
+													<button type="submit" class="btn btn-primary">Tasdiqlash</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="text-center mt-3">
+										<!-- Check if a file is attached before opening the modal -->
+										<button type="button" class="btn btn-primary" onclick="openModalIfFileAttached()"
+											id="readButton">Kirish</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<script src="/admin/js/helper.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
